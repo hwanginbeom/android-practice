@@ -1,0 +1,12 @@
+package com.example.user.a180518_project;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class LoadingActivity extends Activity {
+
+    @Override
+    protected  void onCreate(Bundle saverdinstanceState){
+        super.onCreate(saverdinstanceState);
+    }
+}
