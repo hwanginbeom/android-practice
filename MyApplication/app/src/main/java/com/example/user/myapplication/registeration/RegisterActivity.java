@@ -1,8 +1,8 @@
-package com.example.user.registeration;
+package com.example.user.myapplication.registeration;
 
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                             else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                dialog = builder.setMessage("사용 할 수 없는 아이디입니다.")
+                                dialog = builder.setMessage("사용 할 수 없는 아이디입니다..")
                                         .setNegativeButton("확인",null)
                                         .create();
                                 dialog.show();

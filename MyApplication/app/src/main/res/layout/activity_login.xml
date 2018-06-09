@@ -85,11 +85,10 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorPrimary"
                 android:text="로그인"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:id="@+id/loginButton"/>
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
