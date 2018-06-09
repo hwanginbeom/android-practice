@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
-                Response.Listener<String> resposeListener = new Response.Listener<String>() {
+                Response.Listener<String> responseListener  = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try
@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 };
-                ValidateRequset validateRequset = new ValidateRequset(userID,resposeListener);
+                ValidateRequset validateRequset = new ValidateRequset(userID,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(validateRequset);
             }
@@ -142,7 +142,7 @@ public class RegisterActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
-                Response.Listener<String> resposeListener = new Response.Listener<String>() {
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try
@@ -171,7 +171,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 };
-                RegisterRequest registerRequest = new RegisterRequest(userID , userPassword, userGender, userEmail, userMajor,resposeListener);
+                RegisterRequest registerRequest = new RegisterRequest(userID , userPassword, userGender, userEmail, userMajor,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
 
