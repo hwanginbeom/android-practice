@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <uses-permission android:name="android.permission.INTERNET"
-            tools:ignore="WrongManifestParent"></uses-permission>
+            tools:ignore="WrongManifestParent" />
 
 
 
