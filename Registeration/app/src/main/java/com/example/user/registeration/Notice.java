@@ -7,7 +7,12 @@ public class Notice {
     String rating;
     String link;
 
-
+    public Notice(String title, String tag, String rating, String link) {
+        this.title = title;
+        this.tag = tag;
+        this.rating = rating;
+        this.link = link;
+    }
 
     public String getTitle() {
         return title;

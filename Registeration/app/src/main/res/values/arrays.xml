@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="major">
-        <item>가정교육과</item>
-        <item>국어교육과</item>
-        <item>수학교육과</item>
-        <item>체육교육과</item>
-        <item>사회교육과</item>
-        <item>물리교육과</item>
-        <item>음악교육과</item>
-        <item>과학교육과</item>
-        <item>윤리교육과</item>
-        <item>지리교육과</item>
+        <item>한국</item>
+        <item>일본</item>
+        <item>동남아시아</item>
+        <item>홍콩</item>
+        <item>싱가폴</item>
+        <item>대만</item>
+        <item>중국</item>
+        <item>유럽</item>
+        <item>미국</item>
+        <item>캐나다</item>
+        <item>대양주</item>
     </string-array>
 
 </resources>
