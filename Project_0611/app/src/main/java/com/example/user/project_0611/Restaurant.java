@@ -10,8 +10,9 @@ public class Restaurant {
     String resRank;
     String resImage;
     String resNation;
+    String resLink;
 
-    public Restaurant(String resID, String resTitle, String resTag, String resRating, String resReview1, String resReview2, String resRank, String resImage, String resNation) {
+    public Restaurant(String resID, String resTitle, String resTag, String resRating, String resReview1, String resReview2, String resRank, String resImage, String resNation, String resLink) {
         this.resID = resID;
         this.resTitle = resTitle;
         this.resTag = resTag;
@@ -21,6 +22,7 @@ public class Restaurant {
         this.resRank = resRank;
         this.resImage = resImage;
         this.resNation = resNation;
+        this.resLink = resLink;
     }
 
     public String getResID() {
@@ -93,5 +95,13 @@ public class Restaurant {
 
     public void setResNation(String resNation) {
         this.resNation = resNation;
+    }
+
+    public String getResLink() {
+        return resLink;
+    }
+
+    public void setResLink(String resLink) {
+        this.resLink = resLink;
     }
 }

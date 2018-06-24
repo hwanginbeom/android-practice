@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.user.project_0611.MainActivity"
     android:background="#FFFFFF">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,57 +58,105 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/firstPage"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scroll">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstPage"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/czech"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/praha"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:background="#FFFFFF"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paris"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paris"/>
+            <ImageButton
+                android:id="@+id/france"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/paris" />
 
-                <ImageButton
-                    android:id="@+id/portugal"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp" />
+            <ImageButton
+                android:id="@+id/uk"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@drawable/london"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/france"
+                android:background="#FFFFFF"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"/>
 
-                <ImageButton
-                    android:id="@+id/france"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"/>
+            <ImageButton
+                android:id="@+id/germany"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@drawable/berlin"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/uk"
+                android:background="#FFFFFF"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"/>
 
-                <ImageButton
-                    android:id="@+id/espana"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"/>
+            <ImageButton
+                android:id="@+id/espana"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@drawable/barcelona"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/germany"
+                android:background="#FFFFFF"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"/>
 
-                <ImageButton
-                    android:id="@+id/germany"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp" />
+            <ImageButton
+                android:id="@+id/portugal"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@drawable/lisbon"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/espana"
+                android:background="#FFFFFF"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"/>
 
-                <ImageButton
-                    android:id="@+id/uk"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"/>
-            </RelativeLayout>
+            <ImageButton
+                android:id="@+id/czech"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@drawable/praha"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/portugal"
+                android:background="#FFFFFF"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/fragment">
-
-            </RelativeLayout>
-
+        </RelativeLayout></ScrollView>
     </LinearLayout>
 </LinearLayout>

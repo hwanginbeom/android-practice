@@ -5,25 +5,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.net.URI;
 import java.util.List;
 
 
-public class ListAdapter extends BaseAdapter {
+public class LinkAdapter extends BaseAdapter {
 
     private Context context;
     private List<Restaurant> restaurantList;
 
-    public ListAdapter(Context context, List<Restaurant> restaurantList){
+    public LinkAdapter(Context context, List<Restaurant> restaurantList){
         this.context = context;
         this.restaurantList = restaurantList;
     }
@@ -60,20 +56,8 @@ public class ListAdapter extends BaseAdapter {
         tag.setText(restaurantList.get(i).getResTag());
         review1.setText(restaurantList.get(i).getResReview1());
         review2.setText(restaurantList.get(i).getResReview2());
-        link.setText("지도 보기");
-        final String urlLink = restaurantList.get(i).getResLink();
-        v.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (Intent.ACTION_VIEW, Uri.parse(urlLink));
-                context.startActivity(intent);
-            }
-        });
-
 
         v.setTag(restaurantList.get(i).getResTitle());
         return v;
     }
-
 }

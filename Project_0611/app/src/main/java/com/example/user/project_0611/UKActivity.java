@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -31,6 +32,7 @@ public class UKActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_czech);
+        final ListView view = (ListView) findViewById(R.id.list);
         restaurantListView = (ListView) findViewById(R.id.list);
 
         restaurantList = new ArrayList<Restaurant>();
@@ -45,6 +47,13 @@ public class UKActivity extends AppCompatActivity {
                 Intent intent = new Intent(UKActivity.this , MainActivity.class);
                 UKActivity.this.startActivity(intent);
 
+            }
+        });
+        view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent (UKActivity.this, InfoActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -110,6 +119,7 @@ public class UKActivity extends AppCompatActivity {
                 String resRank;
                 String resImage;
                 String resNation;
+                String resLink;
                 while(count < jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
                     resID = object.getString("resID");
@@ -121,8 +131,9 @@ public class UKActivity extends AppCompatActivity {
                     resRank = object.getString("resRank");
                     resImage = object.getString("resImage");
                     resNation = object.getString("resNation");
+                    resLink = object.getString("resLink");
 
-                    Restaurant restaurant = new Restaurant(resID, resTitle, resTag, resRating,resReview1,resReview2,resRank,resImage,resNation);
+                    Restaurant restaurant = new Restaurant(resID, resTitle, resTag, resRating,resReview1,resReview2,resRank,resImage,resNation,resLink);
                     restaurantList.add(restaurant);
                     count++;
                 }

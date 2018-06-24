@@ -2,11 +2,12 @@ package com.example.user.project_0611;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,7 +20,6 @@ import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton czechButton = (ImageButton) findViewById(R.id.czech);
         final RelativeLayout first = (RelativeLayout) findViewById(R.id.firstPage);
         final LinearLayout searchBar = (LinearLayout) findViewById(R.id.search_bar);
+        final RelativeLayout listButton = (RelativeLayout) findViewById(R.id.list_button);
+        final ListView view = (ListView) findViewById(R.id.list2);
+
         tagSpinner = (Spinner) findViewById(R.id.tagSpinner);
         tagAdapter = ArrayAdapter.createFromResource(this, R.array.tag, android.R.layout.simple_spinner_dropdown_item);
         tagSpinner.setAdapter(tagAdapter);
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         nationAdapter = ArrayAdapter.createFromResource(this, R.array.nation, android.R.layout.simple_spinner_dropdown_item);
         nationSpinner.setAdapter(nationAdapter);
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
+
+                homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this , MainActivity.class);
@@ -146,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
@@ -212,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
                 String resRank;
                 String resImage;
                 String resNation;
+                String resLink;
                 while(count < jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
                     resID = object.getString("resID");
@@ -223,8 +229,9 @@ public class MainActivity extends AppCompatActivity {
                     resRank = object.getString("resRank");
                     resImage = object.getString("resImage");
                     resNation = object.getString("resNation");
+                    resLink = object.getString("resLink");
 
-                    Restaurant restaurant = new Restaurant(resID, resTitle, resTag, resRating,resReview1,resReview2,resRank,resImage,resNation);
+                    Restaurant restaurant = new Restaurant(resID, resTitle, resTag, resRating,resReview1,resReview2,resRank,resImage,resNation,resLink);
                     restaurantList.add(restaurant);
                     count++;
                 }

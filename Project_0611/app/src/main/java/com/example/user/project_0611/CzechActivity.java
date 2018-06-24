@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -36,7 +37,8 @@ public class CzechActivity extends AppCompatActivity {
         restaurantList = new ArrayList<Restaurant>();
         adapter = new ListAdapter(getApplicationContext(), restaurantList);
         restaurantListView.setAdapter(adapter);
-        new BackgroundTask().execute();
+        final ListView view = (ListView) findViewById(R.id.list);
+        new CzechActivity.BackgroundTask().execute();
         final ImageButton homeButton = (ImageButton) findViewById(R.id.home_button);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +49,14 @@ public class CzechActivity extends AppCompatActivity {
 
             }
         });
+        view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent (CzechActivity.this, InfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -110,6 +120,7 @@ public class CzechActivity extends AppCompatActivity {
                 String resRank;
                 String resImage;
                 String resNation;
+                String resLink;
                 while(count < jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
                     resID = object.getString("resID");
@@ -121,8 +132,9 @@ public class CzechActivity extends AppCompatActivity {
                     resRank = object.getString("resRank");
                     resImage = object.getString("resImage");
                     resNation = object.getString("resNation");
+                    resLink = object.getString("resLink");
 
-                    Restaurant restaurant = new Restaurant(resID, resTitle, resTag, resRating,resReview1,resReview2,resRank,resImage,resNation);
+                    Restaurant restaurant = new Restaurant(resID, resTitle, resTag, resRating,resReview1,resReview2,resRank,resImage,resNation,resLink);
                     restaurantList.add(restaurant);
                     count++;
                 }
@@ -143,4 +155,3 @@ public class CzechActivity extends AppCompatActivity {
         }
     }
 }
-

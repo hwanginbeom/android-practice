@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.project_0611">
 
-
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -18,19 +16,20 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".LoginActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".MainActivity"/>
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".FranceActivity" />
         <activity android:name=".GermanyActivity" />
         <activity android:name=".UKActivity" />
         <activity android:name=".EspanaActivity" />
         <activity android:name=".PortugalActivity" />
         <activity android:name=".CzechActivity" />
+        <activity android:name=".InfoActivity"></activity>
     </application>
 
 </manifest>
