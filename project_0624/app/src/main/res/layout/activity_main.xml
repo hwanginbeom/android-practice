@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,15 +9,24 @@
     tools:context="com.example.user.project_0624.MainActivity"
     android:background="#FFFFFF">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_weight="1"
+        android:id="@+id/scroll">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:id="@+id/linear1">
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -28,10 +37,14 @@
                 android:layout_marginTop="5dp"
                 android:background="#FFFFFF"/>
         </LinearLayout>
-            <LinearLayout
+
+
+
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_below="@id/linear1"
                 android:id="@+id/search_bar">
                 <Spinner
                     android:layout_width="wrap_content"
@@ -52,34 +65,27 @@
                     android:id="@+id/search_button"
                     android:layout_weight="1"/>
 
-            </LinearLayout>
+        </LinearLayout>
+
             <ListView
                 android:id="@+id/list2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-        <ScrollView
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/scroll">
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
+            android:layout_below="@id/linear1"
             android:layout_height="wrap_content"
             android:id="@+id/firstPage"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/paris"/>
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/paris"/>
+            >
+
+
             <ImageButton
                 android:id="@+id/france"
                 android:layout_width="400dp"
@@ -89,6 +95,7 @@
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:padding="5dp"
+
                 android:scaleType="fitXY"
                 android:src="@drawable/paris" />
 
@@ -157,6 +164,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30px"/>
 
-        </RelativeLayout></ScrollView>
+        </RelativeLayout>
     </LinearLayout>
-</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
