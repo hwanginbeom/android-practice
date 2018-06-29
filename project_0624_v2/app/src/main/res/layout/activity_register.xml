@@ -84,35 +84,6 @@
                 android:background="@color/colorPrimary"/>
 
             <EditText
-            android:inputType="textPassword"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:hint="핸드폰번호"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:textColor="#ffffff"
-            android:textColorHint="#ffffff"
-            android:id="@+id/hadnphone"
-            android:drawableStart="@drawable/ic_https_black_24dp"
-            android:drawableLeft="@drawable/ic_https_black_24dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"/>
-            <EditText
-                android:inputType="textPassword"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:hint="주소"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:id="@+id/location"
-                android:drawableStart="@drawable/ic_https_black_24dp"
-                android:drawableLeft="@drawable/ic_https_black_24dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"/>
-
-            <EditText
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:hint="이메일"
@@ -137,7 +108,7 @@
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="점주"
+                    android:text="여성"
                     android:id="@+id/genderWoman"
                     android:layout_weight="1"
                     android:checked="true"
@@ -147,7 +118,7 @@
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="소비자"
+                    android:text="남성"
                     android:id="@+id/genderMan"
                     android:layout_weight="1"
                     ></RadioButton>
@@ -162,7 +133,7 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="카테고리"
+                android:text="관심 국가"
                 android:textColor="@color/colorGray"/>
 
             <Spinner
